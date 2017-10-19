@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">GitHub Api Demo</string>
+    <string name="profile_image">Profile Image</string>
+    <string name="edit">Edit</string>
+    <string name="sort">Sort</string>
+    <string name="name">Name</string>
+    <string name="star">Star</string>
+    <string name="last_push">Last Push</string>
+    <string name="fork">Fork</string>
+    <string name="ascending">Ascending</string>
+    <string name="descending">Descending</string>
+    <string name="sort_by">Sort by</string>
+    <string name="sort_order">Sort Order</string>
+</resources>
