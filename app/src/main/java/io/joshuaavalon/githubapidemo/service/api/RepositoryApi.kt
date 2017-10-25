@@ -8,30 +8,9 @@ import retrofit2.http.Path
 import retrofit2.http.Query
 
 /**
- *
- * @see <a href="https://developer.github.com/v3/repos/#list-all-public-repositories">Repositories | GitHub Developer Guide</a>
+ * @see <a href="https://developer.github.com/v3/repos/">Repositories | GitHub Developer Guide</a>
  */
 interface RepositoryApi {
-
-    /**
-     *  @param visibility Can be one of all, public, or private. Default: all
-     *  @param affiliation Comma-separated list of values. Can include:
-     *
-     *  owner: Repositories that are owned by the authenticated user.
-     *
-     *  collaborator: Repositories that the user has been added to as a collaborator.
-     *
-     *  organization_member: Repositories that the user has access to through being a member of an
-     *  organization. This includes every repository on every team that the user is on.
-     *
-     *  Default: owner,collaborator,organization_member
-     *  @param type Can be one of all, owner, public, private, member. Default: all
-     *
-     *  Will cause a 422 error if used in the same request as visibility or affiliation.
-     *  @param sort
-     *  @param direction
-     * @see <a href="https://developer.github.com/v3/repos/#list-your-repositories">List your repositories</a>
-     */
 
     @GET("/user/repos")
     fun listRepositories(@Header("Authorization") authorization: String,

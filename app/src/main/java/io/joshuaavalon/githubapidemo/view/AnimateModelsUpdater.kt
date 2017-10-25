@@ -2,7 +2,10 @@ package io.joshuaavalon.githubapidemo.view
 
 import android.support.v7.widget.RecyclerView
 
-
+/**
+ * Animated models updating used by [BindingRecyclerAdapter].
+ * It uses proper notify instead of notifyDataSetChanged.
+ */
 fun <T> animateModelsUpdater(adapter: RecyclerView.Adapter<BindingViewHolder<T>>,
                              oldModels: MutableList<T>,
                              newModels: List<T>) {

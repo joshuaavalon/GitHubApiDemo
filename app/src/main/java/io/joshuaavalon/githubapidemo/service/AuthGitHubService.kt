@@ -2,10 +2,10 @@ package io.joshuaavalon.githubapidemo.service
 
 import android.util.Base64
 import io.joshuaavalon.githubapidemo.service.model.Repository
-import okhttp3.OkHttpClient
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
 
+/**
+ * Implementation of GitHub REST API v3 with Authentication
+ */
 class AuthGitHubService(userName: String, password: String) : GitHubService() {
 
     private val authorization = "Basic ${

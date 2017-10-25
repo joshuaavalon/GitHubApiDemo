@@ -11,11 +11,12 @@ import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.io.IOException
-import java.util.concurrent.FutureTask
 
-
+/**
+ * Implementation of GitHub REST API v3 without Authentication
+ */
 open class GitHubService {
-    protected val retrofit: Retrofit
+    private val retrofit: Retrofit
 
     init {
         val okHttpClient = OkHttpClient.Builder()
@@ -53,6 +54,9 @@ open class GitHubService {
         enqueue(onResponse, onFailure) { userApi.getUser(userName) }
     }
 
+    /**
+     * Wrap the callback into Retrofit.Callback<T>.
+     */
     private fun <T> wrap(onResponse: (T) -> Unit,
                          onFailure: (Throwable) -> Unit): Callback<T> =
             object : Callback<T> {
@@ -70,6 +74,9 @@ open class GitHubService {
                 }
             }
 
+    /**
+     * Wrap the api and callback.
+     */
     protected fun <T> enqueue(
             onResponse: (T) -> Unit,
             onFailure: (Throwable) -> Unit,

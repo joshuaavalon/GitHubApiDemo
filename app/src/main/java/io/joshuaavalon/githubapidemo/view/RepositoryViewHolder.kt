@@ -1,8 +1,5 @@
 package io.joshuaavalon.githubapidemo.view
 
-import android.os.Build
-import android.text.Html
-import android.text.Spanned
 import android.view.View
 import android.widget.TextView
 import io.joshuaavalon.githubapidemo.R
@@ -22,7 +19,8 @@ class RepositoryViewHolder(itemView: View) : BindingViewHolder<Repository>(itemV
         descriptionTextView.text = model.description
         itemView.setOnClickListener { itemView.context.openUrl(model.htmlUrl) }
         val language = model.language
-        if(language != null) {
+        // Resetting is needed because view is reused in RecyclerView.
+        if (language != null) {
             languageTextView.text = language
             languageTextView.visibility = View.VISIBLE
         } else {
